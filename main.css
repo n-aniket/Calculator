@@ -1,0 +1,47 @@
+*{
+    background-color: rgba(112, 98, 109, 0.527);
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "montserrat";
+}
+#main{
+    background-color: whitesmoke;
+    position: absolute;
+    height: 75vh;
+    width: 55vh;
+    top: 15%;
+    left: 35%;
+}
+#display{
+    background-color: inherit;
+    position: relative;
+    height: 35%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+
+}
+#input{
+    position: relative;
+    height: 65%;
+    width: 100%;
+    left: 0px;
+    bottom: 0%;
+}
+
+button {
+    border: 1px solid black; 
+    border-bottom: none;
+    color: black;
+    font-size: 20px; 
+    height: 100%;
+    width:25%; 
+    float: left; 
+}
+.row{
+   height: 20%;
+}
+.row button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
