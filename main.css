@@ -6,20 +6,26 @@
     font-family: "montserrat";
 }
 #main{
-    background-color: whitesmoke;
+    background-color: rgb(245, 245, 245);
     position: absolute;
     height: 75vh;
     width: 55vh;
     top: 15%;
     left: 35%;
+    border: 1px solid black;
 }
 #display{
+    border: 1px solid black;
+    border-top:none;
+    border-left:none;
+    border-right:none;
     background-color: inherit;
     position: relative;
     height: 35%;
     width: 100%;
     top: 0px;
     left: 0px;
+    overflow: hidden;
 
 }
 #input{
@@ -28,20 +34,46 @@
     width: 100%;
     left: 0px;
     bottom: 0%;
+    overflow: hidden;
+    background-color: black;
 }
 
-button {
-    border: 1px solid black; 
-    border-bottom: none;
+.row button{
     color: black;
+    background-color:rgb(255, 255, 255) ;
     font-size: 20px; 
     height: 100%;
     width:25%; 
     float: left; 
+    cursor: pointer;
 }
 .row{
    height: 20%;
 }
-.row button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+.row button:hover{
+    background-color: rgba(255, 255, 255, 0.404);
+}
+
+.displayRow {
+    color: black;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background-color: inherit;
+}
+.displayRow p{
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    font-size: 30px;
+    background-color: inherit;
+}
+
+#display div:nth-child(3){
+    height: 35%;
+    font-size: 60px;
+}
+#display div:nth-child(4){
+    height: 15%;
+    font-size: 60px;
 }

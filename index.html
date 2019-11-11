@@ -6,49 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CALCULATOR</title>
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="display.css">
-    <link rel="stylesheet" href="input.css">
 </head>
 <body>
     <div id="main">
         <div id="display">
-
+            <div class="displayRow"><p id="row1"></p></div>
+            <div class="displayRow"><p id="row2"></p></div>
+            <div class="displayRow" ><p id="row3" style="font-size: 50px;">0</p></div>
+            <div class="displayRow"><p id="row4" style="font-size: 20px;"></p></div>
         </div>
         <div id="input">
             <div class="row" >
-                <button id="ac">AC</button>
-                <button id="clear">X</button>
-                <button id="percent">%</button>
-                <button id="divide">÷</button>
+                <button class="operation" onclick="clickCapture(this,'AC')" id="ac">AC</button>
+                <button class="operation" id="clear">X</button>
+                <button class="operation" onclick="clickCapture(this,'O')" id="percent">%</button>
+                <button class="operation" onclick="clickCapture(this,'O')" id="divide">÷</button>
             </div>
             <div class="row">
-                    <button id="ac">7</button>
-                    <button id="clear">8</button>
-                    <button id="percent">9</button>
-                    <button id="divide">*</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num7">7</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num8">8</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num9">9</button>
+                    <button class="operation" onclick="clickCapture(this,'O')" id="multiply">*</button>
             </div>
             <div class="row">
-                    <button id="ac">4</button>
-                    <button id="clear">5</button>
-                    <button id="percent">6</button>
-                    <button id="divide">-</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num4">4</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num5">5</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num6">6</button>
+                    <button class="operation" onclick="clickCapture(this,'O')" id="subtract">-</button>
             </div>
             <div class="row">
-                    <button id="ac">1</button>
-                    <button id="clear">2</button>
-                    <button id="percent">3</button>
-                    <button id="divide">+</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num1">1</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num2">2</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num3">3</button>
+                    <button class="operation" onclick="clickCapture(this,'O')" id="add">+</button>
             </div>
-            <div class="row" style="border-bottom: 1px solid black">
-                    <button id="ac">NA</button>
-                    <button id="clear">0</button>
-                    <button id="percent">.</button>
-                    <button id="divide">=</button>
+            <div class="row" >
+                    <button class="operation" id="na">N/A</button>
+                    <button class="num" onclick="clickCapture(this,'N')" id="num0">0</button>
+                    <button class="num" onclick="clickCapture(this,'dot')" id="dot">.</button>
+                    <button class="operation" onclick="clickCapture(this,'equals')" id="equals">=</button>
             </div>
 
         </div>
-    </div>
-
-    
+    </div>    
 </body>
+<script src="calc.js"></script>
 </html>
