@@ -41,7 +41,7 @@
 .row button{
     color: black;
     background-color:rgb(255, 255, 255) ;
-    font-size: 20px; 
+    font-size: 30px; 
     height: 100%;
     width:25%; 
     float: left; 
@@ -50,6 +50,7 @@
 .row{
    height: 20%;
 }
+
 .row button:hover{
     background-color: rgba(255, 255, 255, 0.404);
 }
@@ -74,6 +75,17 @@
     font-size: 60px;
 }
 #display div:nth-child(4){
+    color: rgba(0, 0, 0, 0.555);
     height: 15%;
     font-size: 60px;
+}
+#ac{
+    color: orangered;
+}
+#equals{
+    color: white;
+    background-color: rgba(255, 68, 0, 0.966)
+}
+#equals:hover{
+    background-color: rgba(255, 255, 255, 0.425);
 }
