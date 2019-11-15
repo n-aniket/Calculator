@@ -41,14 +41,7 @@ function clickCapture(element,inputType){
             clearFunt();           
             break;
         case 'AC':
-            globalVarA = 0;
-            globalVarB = 0;
-            globalOp = '';
-            display('','','0','');
-            acButtonToC.innerHTML = 'AC';
-            selectNumber = 0 ;
-            temp = 0;
-            globalFloatSelector = 0;
+            acFuntion();
             break;
         case 'dot':
             globalFloatSelector = 1;
@@ -66,7 +59,7 @@ function clickCapture(element,inputType){
 function firstNumber(element){
     let localVarB = 0;
     let localvarC = parseInt(element.textContent);
-    if (temp) {//if = is pressed
+    if (temp) {                                                             //if = is pressed
         displaySection1.innerHTML = displaySection1.textContent + displaySection2.textContent + displaySection3.textContent;
         displaySection2.innerHTML = '';
         displaySection3.innerHTML = '';   
@@ -79,6 +72,7 @@ function firstNumber(element){
         globalVarA = parseFloat((globalVarA + (localvarC/localVarB)).toFixed(globalFloatSelector));
         globalFloatSelector++;
     }
+    result = globalVarA;
     display(displaySection1.textContent,displaySection2.textContent,globalVarA,'=' + globalVarA);
 }
 function secondNumber(element){
@@ -100,6 +94,7 @@ function equals(){
     if(selectNumber){
     display(displaySection2.textContent,displaySection3.textContent,'= ' + result,'');
     globalVarB = 0;
+    globalVarA = 0;
     selectNumber = 0;
     temp = 1;
     globalFloatSelector = 0;
@@ -130,15 +125,13 @@ function clearFunt(){
         globalVarA = parseFloat(globalVarA);
         
         if( isNaN(globalVarA)){
-           console.log("ghfghsh");
-            globalVarA = 0;
+          globalVarA = 0;
         }
         display(displaySection1.textContent,displaySection2.textContent,globalVarA,'='+globalVarA);
     }
 
 }
 function clacResult(){
-    
     let localVarA = result;
     switch (globalOp) {
         case '+':
@@ -161,10 +154,53 @@ function clacResult(){
             localVarA = parseFloat((globalVarA /globalVarB).toFixed(5));
             break;  
         default:
-                console.log("default case")
+                console.log("default case");
             break;
     }
     return localVarA;
+}
+
+function centFunt(){
+    let localVarD = 0;
+    switch (globalOp) {
+        case '+':
+        case '-':
+            localVarD = (globalVarA*globalVarB)/100;
+            globalVarB = localVarD;
+            result = clacResult();
+            display(displaySection1.textContent,displaySection2.textContent,globalOp + '' + globalVarB, '=' + result);            
+        break;
+        case '*':
+        case '÷':
+            localVarD = globalVarB/100;
+            globalVarB = localVarD;
+            result = clacResult();
+            display(displaySection1.textContent,displaySection2.textContent,globalOp + '' + globalVarB, '=' + result);
+        break;
+        default: // if only one number is entered and % is pressed
+            localVarD = globalVarA/100;
+            globalVarA = localVarD;
+            result = globalVarA;
+            display(displaySection1.textContent,displaySection2.textContent,globalVarA, '=' + result);
 
 
+        
+    }
+}
+
+function acFuntion(){
+    globalVarA = 0;
+    globalVarB = 0;
+    globalOp = '';    
+    selectNumber = 0 ;
+    acButtonToC.innerHTML = 'AC';
+     display('','','0','');
+    temp = 0;
+    globalFloatSelector = 0;
+    /*if (temp) {
+        display(displaySection1.textContent,'','0','');
+        temp = 0;
+    } else {
+        display('','','0','');        
+    }*/
 }

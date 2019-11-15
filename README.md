@@ -1,6 +1,2 @@
 # Calculator
-todo :
-result variable
-make ac and c work properly
-cent id
-scoll display if posible(add display function)
+I tried to replicate calculator app on MIUI phone.
