@@ -12,9 +12,50 @@ let displaySection3 = document.getElementById("row3");
 let displaySection4 = document.getElementById("row4");
 let acButtonToC = document.getElementById("ac");
 
+//new
+let items = [];
+const displayLocal = document.querySelector('#displayAll');
+const clickedOnDisplay = document.querySelector('#print').addEventListener('click',addId);
+
+function addItem(first,second,third){
+    const item ={
+        first,
+        second,
+        third
+
+    }
+    items.push(item);
+}
+
+function addId(){
+    document.querySelector('#display').className = "undo";
+    document.querySelector('#input').className = "undo";
+    displayLocal.className = "change";
+    displayLocal.innerHTML = items.map((plate, i) => {
+        console.log("hj");
+          return `
+            <ul>
+              <li>${plate.first}</li>
+              <li>${plate.second}</li>
+              <li>${plate.third}</li>              
+            </ul>
+          `;
+        }).join('');
+    
+    displayLocal.addEventListener('click',() => {
+        document.querySelector('#display').classList.remove("undo");
+        document.querySelector('#input').classList.remove("undo");
+        displayLocal.className = "undo";
+    })
+    
+      
+}
+//new ends
 
 function clickCapture(element,inputType){
-    acButtonToC.innerHTML = "C";
+    if(inputType != 'AC'){
+        acButtonToC.innerHTML = "C";
+    }
     switch (inputType) {
         case 'N':
             if(selectNumber === 0){
@@ -92,6 +133,7 @@ function secondNumber(element){
 
 function equals(){
     if(selectNumber){
+    addItem(displaySection2.textContent,displaySection3.textContent,'= ' + result);
     display(displaySection2.textContent,displaySection3.textContent,'= ' + result,'');
     globalVarB = 0;
     globalVarA = 0;
@@ -189,6 +231,7 @@ function centFunt(){
 }
 
 function acFuntion(){
+    if(acButtonToC.innerHTML === 'C'){
     globalVarA = 0;
     globalVarB = 0;
     globalOp = '';    
@@ -197,10 +240,9 @@ function acFuntion(){
      display('','','0','');
     temp = 0;
     globalFloatSelector = 0;
-    /*if (temp) {
-        display(displaySection1.textContent,'','0','');
-        temp = 0;
-    } else {
-        display('','','0','');        
-    }*/
+    }
+    else{
+        console.log("hsgh");
+        items = [];
+    }
 }

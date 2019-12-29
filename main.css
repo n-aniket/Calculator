@@ -89,3 +89,24 @@
 #equals:hover{
     background-color: rgba(255, 255, 255, 0.425);
 }
+
+.change{
+    height: 75vh;
+    width: 55vh;
+    background-color: inherit;
+}
+
+.change ul{
+    background-color: inherit;
+    font-size: 30px;
+    list-style-type: none;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.change ul li{
+    background-color: inherit;
+}
+
+.undo{
+    display: none;
+}
