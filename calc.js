@@ -12,7 +12,6 @@ let displaySection3 = document.getElementById("row3");
 let displaySection4 = document.getElementById("row4");
 let acButtonToC = document.getElementById("ac");
 
-//new
 let items = [];
 const displayLocal = document.querySelector('#displayAll');
 const clickedOnDisplay = document.querySelector('#print').addEventListener('click',addId);
@@ -50,7 +49,6 @@ function addId(){
     
       
 }
-//new ends
 
 function clickCapture(element,inputType){
     if(inputType != 'AC'){

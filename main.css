@@ -1,39 +1,35 @@
 *{
-    background-color: rgba(112, 98, 109, 0.527);
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
     font-family: "montserrat";
 }
+body{
+    background-color: rgb(145, 145, 145);
+}
+.container{
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 #main{
-    background-color: rgb(245, 245, 245);
-    position: absolute;
-    height: 75vh;
-    width: 55vh;
-    top: 15%;
-    left: 35%;
+    background-color: rgb(245, 245, 245);    
+    height: 77vh;
+    width: 55vh;    
     border: 1px solid black;
 }
 #display{
-    border: 1px solid black;
-    border-top:none;
-    border-left:none;
-    border-right:none;
-    background-color: inherit;
-    position: relative;
+    border-bottom: 1px solid black;
     height: 35%;
     width: 100%;
-    top: 0px;
-    left: 0px;
     overflow: hidden;
-
 }
 #input{
-    position: relative;
+   
     height: 65%;
     width: 100%;
-    left: 0px;
-    bottom: 0%;
     overflow: hidden;
     background-color: black;
 }
@@ -41,7 +37,7 @@
 .row button{
     color: black;
     background-color:rgb(255, 255, 255) ;
-    font-size: 30px; 
+    font-size: 4vh; 
     height: 100%;
     width:25%; 
     float: left; 
@@ -60,14 +56,12 @@
     position: relative;
     width: 100%;
     height: 25%;
-    background-color: inherit;
 }
 .displayRow p{
     position: absolute;
     bottom: 0px;
     right: 5px;
-    font-size: 30px;
-    background-color: inherit;
+    font-size: 4vh;
 }
 
 #display div:nth-child(3){
@@ -77,10 +71,12 @@
 #display div:nth-child(4){
     color: rgba(0, 0, 0, 0.555);
     height: 15%;
-    font-size: 60px;
 }
 #ac{
     color: orangered;
+}
+#print{
+    color: rgb(37, 43, 95);
 }
 #equals{
     color: white;
@@ -91,22 +87,23 @@
 }
 
 .change{
-    height: 75vh;
-    width: 55vh;
-    background-color: inherit;
+    height: 77vh;
+    width: 55vh; 
+    display: flex;
+    flex-direction: column-reverse;
+    overflow: hidden;
 }
 
 .change ul{
-    background-color: inherit;
-    font-size: 30px;
+    flex: 1;
+    font-size: 4vh;
     list-style-type: none;
     border-bottom: 1px solid rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction:row ;
+    
 }
-
-.change ul li{
-    background-color: inherit;
-}
-
 .undo{
     display: none;
+
 }
