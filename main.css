@@ -16,8 +16,8 @@ body{
 }
 #main{
     background-color: rgb(245, 245, 245);    
-    height: 77vh;
-    width: 55vh;    
+    height: 100%;
+    width: 100%;    
     border: 1px solid black;
 }
 #display{
